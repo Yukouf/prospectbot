@@ -1,0 +1,9 @@
+# Données de prospection réelles (infos de commerces) — jamais publiées
+prospects.csv
+prospects.json
+scraped.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
