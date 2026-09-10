@@ -1,47 +1,52 @@
 # ProspectBot
 
-Génère en masse des messages de prospection personnalisés pour des commerces locaux, à partir d'un LLM local (Ollama). L'idée : produire des messages courts, naturels et non-insistants, sans données qui quittent la machine.
+<p align="center">
+  <a href="README.md">English</a> &bull;
+  <a href="README_fr.md">Français</a>
+</p>
 
-## Ce que ça fait
+Generates in bulk personalized prospecting messages for local businesses, from a local LLM (Ollama). The idea: produce short, natural and non-pushy messages, with no data leaving the machine.
 
-1. Tu saisis des commerces (nom, adresse, téléphone) ou tu en colles une liste.
-2. Pour chaque commerce, ProspectBot appelle un petit modèle local (`phi3:3.8b` via Ollama) pour rédiger un message de prospection de 2 phrases max.
-3. Les messages générés sont affichés pour copier-coller et exportés dans un CSV.
+## What it does
 
-Le modèle est configuré pour :
-- rester naturel, comme un vrai message privé (pas du corporate)
-- proposer de l'aide pour un site web moderne
-- finir par une question simple
-- ne pas mentionner de prix, ni être insistant ou commercial
+1. You enter businesses (name, address, phone number) or paste a list.
+2. For each business, ProspectBot calls a small local model (`phi3:3.8b` via Ollama) to draft a prospecting message of 2 sentences max.
+3. The generated messages are displayed for copy and paste, and exported to a CSV.
 
-## Prérequis
+The model is configured to:
+- stay natural, like a real private message (not corporate)
+- offer help with a modern website
+- end with a simple question
+- not mention prices, nor be pushy or sales-oriented
+
+## Prerequisites
 
 - Python 3
-- [Ollama](https://ollama.com/) installé et lancé
-- Le modèle local `phi3:3.8b` (`ollama pull phi3:3.8b`)
-- Le paquet `requests`
+- [Ollama](https://ollama.com/) installed and running
+- The local model `phi3:3.8b` (`ollama pull phi3:3.8b`)
+- The `requests` package
 
-## Utilisation
+## Usage
 
 ```bash
 python3 prospectbot.py
 ```
 
-Suis les invites :
-- laisse vide pour terminer la saisie
-- aucune saisie → il utilise des exemples de démonstration
-- les messages valides sont copiés dans le terminal, tout est exporté dans `prospects.csv`
+Follow the prompts:
+- leave blank to finish the entry
+- no entry -> it uses demonstration examples
+- valid messages are copied in the terminal, everything is exported to `prospects.csv`
 
-## Fichiers de données
+## Data files
 
-Les fichiers `prospects.csv`, `prospects.json` et `scraped.json` contiennent des données de prospection réelles (noms, adresses, téléphones). Ils sont **exclus du dépôt** via `.gitignore` pour ne pas diffuser d'informations personnelles ou de données de démarchage.
+The files `prospects.csv`, `prospects.json` and `scraped.json` contain real prospecting data (names, addresses, phone numbers). They are **excluded from the repository** via `.gitignore` so as not to distribute personal information or canvassing data.
 
-## Limites et éthique
+## Limits and ethics
 
-- Outil de démonstration : à adapter pour respecter les règles (RGPD, opt-out, pratiques de prospection) selon le contexte d'usage.
-- Le modèle local produit des textes ; vérifie toujours le fond avant envoi réel.
-- Aucune donnée ne quitte ta machine quand tu utilises Ollama en local.
+- Demonstration tool: to be adapted to comply with the rules (GDPR, opt-out, prospecting practices) depending on the context of use.
+- The local model produces text; always check the content before an actual send.
+- No data leaves your machine when you use Ollama locally.
 
-## Auteur
+## Author
 
-Crée par [Youssef Guerniou](https://github.com/Yukouf) — pour la prospection de commerces locaux sans sortir de la machine.
+Created by [Youssef Guerniou](https://github.com/Yukouf), for prospecting local businesses without leaving the machine.
